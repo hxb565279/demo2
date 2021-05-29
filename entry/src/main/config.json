@@ -1,0 +1,54 @@
+{
+  "app": {
+    "bundleName": "com.hxb.myapplication",
+    "vendor": "hxb",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    },
+    "apiVersion": {
+      "compatible": 4,
+      "target": 5,
+      "releaseType": "Release"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "reqPermissions": [
+      {
+        "name": ""
+      }
+    ],
+    "package": "com.hxb.myapplication",
+    "name": ".MyApplication",
+    "deviceType": [
+      "tablet"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.hxb.myapplication.MainAbility",
+        "icon": "$media:homs",
+        "description": "$string:mainability_description",
+        "label": "和学博",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}

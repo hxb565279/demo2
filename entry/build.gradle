@@ -1,0 +1,37 @@
+apply plugin: 'com.huawei.ohos.hap'
+apply plugin: 'com.huawei.ohos.decctest'
+ohos {
+    signingConfigs {
+        debug {
+            storeFile file('E:\\KEY\\key-mmp.p12')
+            storePassword '000000192AC2C1E1D443E4E23536E3BC92674D883B512BB2AA1F136A774DB303465DE7A2EC6657C5E8'
+            keyAlias = 'key_mpp'
+            keyPassword '00000019C1BC8A007E4D95B15042F554FC43242E14E7B1A0D55B8B3B76DF3B7D408CD702A4B5375EA3'
+            signAlg = 'SHA256withECDSA'
+            profile file('E:\\KEY\\demo02Debug.p7b')
+            certpath file('E:\\KEY\\key-mpp-1.cer')
+        }
+    }
+    compileSdkVersion 5
+    defaultConfig {
+        compatibleSdkVersion 4
+    }
+    buildTypes {
+        release {
+            proguardOpt {
+                proguardEnabled false
+                rulesFiles 'proguard-rules.pro'
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+    testImplementation 'junit:junit:4.13'
+    ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.100'
+}
+decc {
+    supportType = ['html', 'xml']
+}
